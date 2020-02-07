@@ -102,13 +102,13 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    8.7k
+                    6.2k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    8 mins.
+                    6 mins.
                 </span>
                 
                 
@@ -148,8 +148,287 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
 <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>对结果去重</p>
 <h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> 列名称 <span class="keyword">FROM</span> 表名称;</span><br></pre></td></tr></table></figure>
 
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 从role表中查询id,role</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br><span class="line"><span class="comment">-- 结果</span></span><br><span class="line">           id           |      role      </span><br><span class="line"><span class="comment">------------------------+----------------</span></span><br><span class="line"> 7Dn_McXAQJefscAN7GUU0g | consumer</span><br><span class="line"> bDHegQTpRQSUSHGgWAad9Q | superadmin</span><br><span class="line"> 0FdCEA01SzOc2hTffN1XIA | supplier-admin</span><br><span class="line"> hHLgbKpoRda1FeKlO-izpw | pro_role</span><br><span class="line"> YXUpJbTWQm60qtRlyg5x9Q | pro_role</span><br><span class="line"> SXACqE4YSg6jWTnO2VcFzA | pro_role</span><br><span class="line"> N93SO0J9SOOjBLFkKlhYhg | pro_role</span><br><span class="line"> iE0nKZICTlWTW-aGHypUMg | pro_role</span><br><span class="line"> 3IzsASIMQ3yjQ79UQ38QNg | pro_role</span><br><span class="line"> ybvsITz2TcKGwI9c8LfH7g | pro_role</span><br><span class="line"> 2dN26CDbR5-NNlM4KkzzDw | pro_role</span><br><span class="line"> uaAUmFyxQSWgoceOmmUV-w | pro_role</span><br><span class="line"> lzcFm5oITiivhHmgvxnldg | pro_role</span><br><span class="line"> l5ZioABWRbagd5sPt2-8XQ | pro_role</span><br><span class="line"> H7oTf7uxSn6_4yIfJyP6Pg | pro_role</span><br><span class="line"> MA5zhrFkRXOR-xBywCBH3g | pro_role</span><br><span class="line"> 5joc_WQpTGuCQW4F80fDmw | pro_role</span><br><span class="line"> 927MuId1T2CkXy_kSNspbw | pro_role</span><br><span class="line"> IKmTTNwwRuORF12Z_HzLpQ | pro_role</span><br><span class="line"> i8LwTbo0Ts-Lf94fFtX8Tw | pro_role</span><br><span class="line"> isaitsOURXOu1MgI-DBQvg | pro_role</span><br><span class="line"> xxecC-mNT4m3y7yFGoLT0g | pro_role</span><br><span class="line"> w24oqccCS1SQ0zGnXj-RGA | pro_role</span><br><span class="line"> 5nahnPiUShKouLBO1nehWw | pro_role</span><br><span class="line"> d2ajZMIlSJWAwTVx-o-cTQ | pro_role</span><br><span class="line"> U5bektoPTWO-Ew-ysCNm_Q | pro_role</span><br><span class="line"> FQyweychTNC3ai-Qh0Svwg | pro_role</span><br><span class="line">(27 rows)</span><br><span class="line"><span class="comment">-- 从role表中查询id,role并且去重</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br><span class="line"><span class="comment">-- 结果</span></span><br><span class="line">           id           |      role      </span><br><span class="line"><span class="comment">------------------------+----------------</span></span><br><span class="line"> 7Dn_McXAQJefscAN7GUU0g | consumer</span><br><span class="line"> bDHegQTpRQSUSHGgWAad9Q | superadmin</span><br><span class="line"> 0FdCEA01SzOc2hTffN1XIA | supplier-admin</span><br><span class="line"> hHLgbKpoRda1FeKlO-izpw | pro_role</span><br><span class="line"> YXUpJbTWQm60qtRlyg5x9Q | pro_role</span><br><span class="line"> SXACqE4YSg6jWTnO2VcFzA | pro_role</span><br><span class="line"> N93SO0J9SOOjBLFkKlhYhg | pro_role</span><br><span class="line"> iE0nKZICTlWTW-aGHypUMg | pro_role</span><br><span class="line"> 3IzsASIMQ3yjQ79UQ38QNg | pro_role</span><br><span class="line"> ybvsITz2TcKGwI9c8LfH7g | pro_role</span><br><span class="line"> 2dN26CDbR5-NNlM4KkzzDw | pro_role</span><br><span class="line"> uaAUmFyxQSWgoceOmmUV-w | pro_role</span><br><span class="line"> lzcFm5oITiivhHmgvxnldg | pro_role</span><br><span class="line"> l5ZioABWRbagd5sPt2-8XQ | pro_role</span><br><span class="line"> H7oTf7uxSn6_4yIfJyP6Pg | pro_role</span><br><span class="line"> MA5zhrFkRXOR-xBywCBH3g | pro_role</span><br><span class="line"> 5joc_WQpTGuCQW4F80fDmw | pro_role</span><br><span class="line"> 927MuId1T2CkXy_kSNspbw | pro_role</span><br><span class="line"> IKmTTNwwRuORF12Z_HzLpQ | pro_role</span><br><span class="line"> i8LwTbo0Ts-Lf94fFtX8Tw | pro_role</span><br><span class="line"> isaitsOURXOu1MgI-DBQvg | pro_role</span><br><span class="line"> xxecC-mNT4m3y7yFGoLT0g | pro_role</span><br><span class="line"> w24oqccCS1SQ0zGnXj-RGA | pro_role</span><br><span class="line"> 5nahnPiUShKouLBO1nehWw | pro_role</span><br><span class="line"> d2ajZMIlSJWAwTVx-o-cTQ | pro_role</span><br><span class="line"> U5bektoPTWO-Ew-ysCNm_Q | pro_role</span><br><span class="line"> FQyweychTNC3ai-Qh0Svwg | pro_role</span><br><span class="line">(27 rows)</span><br><span class="line"><span class="comment">-- 从role表中查询role并且去重</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br><span class="line"><span class="comment">-- 结果</span></span><br><span class="line">      role      </span><br><span class="line"><span class="comment">----------------</span></span><br><span class="line"> supplier-admin</span><br><span class="line"> superadmin</span><br><span class="line"> consumer</span><br><span class="line"> pro_role</span><br><span class="line">(4 rows)</span><br></pre></td></tr></table></figure>
-
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="从role表中查询id-role"><a href="#从role表中查询id-role" class="headerlink" title="从role表中查询id,role"></a>从role表中查询id,role</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><table>
+<thead>
+<tr>
+<th>id</th>
+<th>role</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7Dn_McXAQJefscAN7GUU0g</td>
+<td>consumer</td>
+</tr>
+<tr>
+<td>bDHegQTpRQSUSHGgWAad9Q</td>
+<td>superadmin</td>
+</tr>
+<tr>
+<td>0FdCEA01SzOc2hTffN1XIA</td>
+<td>supplier-admin</td>
+</tr>
+<tr>
+<td>hHLgbKpoRda1FeKlO-izpw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>YXUpJbTWQm60qtRlyg5x9Q</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>SXACqE4YSg6jWTnO2VcFzA</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>N93SO0J9SOOjBLFkKlhYhg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>iE0nKZICTlWTW-aGHypUMg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>3IzsASIMQ3yjQ79UQ38QNg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>ybvsITz2TcKGwI9c8LfH7g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>2dN26CDbR5-NNlM4KkzzDw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>uaAUmFyxQSWgoceOmmUV-w</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>lzcFm5oITiivhHmgvxnldg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>l5ZioABWRbagd5sPt2-8XQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>H7oTf7uxSn6_4yIfJyP6Pg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>MA5zhrFkRXOR-xBywCBH3g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>5joc_WQpTGuCQW4F80fDmw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>927MuId1T2CkXy_kSNspbw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>IKmTTNwwRuORF12Z_HzLpQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>i8LwTbo0Ts-Lf94fFtX8Tw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>isaitsOURXOu1MgI-DBQvg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>xxecC-mNT4m3y7yFGoLT0g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>w24oqccCS1SQ0zGnXj-RGA</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>5nahnPiUShKouLBO1nehWw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>d2ajZMIlSJWAwTVx-o-cTQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>U5bektoPTWO-Ew-ysCNm_Q</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>FQyweychTNC3ai-Qh0Svwg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>### 从role表中查询id,role并且去重</td>
+<td></td>
+</tr>
+<tr>
+<td><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure></td>
+<td></td>
+</tr>
+<tr>
+<td>### 结果</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>role</td>
+</tr>
+<tr>
+<td>———————-</td>
+<td>————–</td>
+</tr>
+<tr>
+<td>7Dn_McXAQJefscAN7GUU0g</td>
+<td>consumer</td>
+</tr>
+<tr>
+<td>bDHegQTpRQSUSHGgWAad9Q</td>
+<td>superadmin</td>
+</tr>
+<tr>
+<td>0FdCEA01SzOc2hTffN1XIA</td>
+<td>supplier-admin</td>
+</tr>
+<tr>
+<td>hHLgbKpoRda1FeKlO-izpw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>YXUpJbTWQm60qtRlyg5x9Q</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>SXACqE4YSg6jWTnO2VcFzA</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>N93SO0J9SOOjBLFkKlhYhg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>iE0nKZICTlWTW-aGHypUMg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>3IzsASIMQ3yjQ79UQ38QNg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>ybvsITz2TcKGwI9c8LfH7g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>2dN26CDbR5-NNlM4KkzzDw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>uaAUmFyxQSWgoceOmmUV-w</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>lzcFm5oITiivhHmgvxnldg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>l5ZioABWRbagd5sPt2-8XQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>H7oTf7uxSn6_4yIfJyP6Pg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>MA5zhrFkRXOR-xBywCBH3g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>5joc_WQpTGuCQW4F80fDmw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>927MuId1T2CkXy_kSNspbw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>IKmTTNwwRuORF12Z_HzLpQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>i8LwTbo0Ts-Lf94fFtX8Tw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>isaitsOURXOu1MgI-DBQvg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>xxecC-mNT4m3y7yFGoLT0g</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>w24oqccCS1SQ0zGnXj-RGA</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>5nahnPiUShKouLBO1nehWw</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>d2ajZMIlSJWAwTVx-o-cTQ</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>U5bektoPTWO-Ew-ysCNm_Q</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>FQyweychTNC3ai-Qh0Svwg</td>
+<td>pro_role</td>
+</tr>
+<tr>
+<td>### 从role表中查询role并且去重</td>
+<td></td>
+</tr>
+<tr>
+<td><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure></td>
+<td></td>
+</tr>
+<tr>
+<td>### 结果</td>
+<td></td>
+</tr>
+<tr>
+<td>role</td>
+<td></td>
+</tr>
+<tr>
+<td>—————</td>
+<td></td>
+</tr>
+<tr>
+<td>supplier-admin</td>
+<td></td>
+</tr>
+<tr>
+<td>superadmin</td>
+<td></td>
+</tr>
+<tr>
+<td>consumer</td>
+<td></td>
+</tr>
+<tr>
+<td>pro_role</td>
+<td></td>
+</tr>
+</tbody></table>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>发现W3school中的内容不够详细，原因从上面的结果也可以看到，我希望可以去重role列，但是我还希望同时列出id。<br>经过baidu,DISTINCT会去重返回结果，所以当需要两列结果时，因为role和id的组合是不重复的，所以没有被去重。</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
@@ -196,7 +475,7 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从role表中查询id-role"><span class="toc-number">3.1.</span> <span class="toc-text">从role表中查询id,role</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">3.2.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                 </div>
             </div>
             
