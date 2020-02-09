@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flask Cli.py - Stephen Ling</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Stephen Ling,"> 
+    <meta name="description" content="做起来比说起来有力.,
+从开源项目中学习代码
+
+入口- cli当调用flask 命令的时候则会调用cli.py的cli.maincli是一个FlaskGroup类,并且置入一个help text.具体代码如下:
+1234,"> 
+    <meta name="author" content="Stephen Ling"> 
+    <link rel="alternative" href="atom.xml" title="Stephen Ling" type="application/atom+xml"> 
+    <link rel="icon" href="/blog/img/favicon.png"> 
+    <link href="https://fonts.loli.net/css?family=Roboto+Mono|Rubik&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1429596_nzgqgvnmkjb.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.7.2/animate.min.css">
+
+    
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/codemirror.min.css">
+
+    
+<link rel="stylesheet" href="//cdn.bootcss.com/codemirror/5.48.4/theme/dracula.css">
+
+    
+<link rel="stylesheet" href="/blog/css/obsidian.css">
+
+    
+<link rel="stylesheet" href="/blog/css/ball-atom.min.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="loading">
+    <div class="loader">
+        <div class="la-ball-atom la-2x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <span id="config-title" style="display:none">Stephen Ling</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div class="scrollbar gradient-bg-rev"></div>
+<div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <div class="navigation animated fadeIn fast delay-1s">
+        <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://stephen-ling.tech/blog">
+        <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
+        <h3 class="subtitle">Flask Cli.py</h3>
+        <div class="social">
+            <!--        <div class="like-icon">-->
+            <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+            <!--        </div>-->
+            <div>
+                <div class="share">
+                    
+                        <a href="javascript:;" class="iconfont icon-share1"></a>
+                        <div class="share-component-cc" data-disabled="facebook,douban,linkedin,diandian,tencent,google"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="section">
+        <div class=article-header-wrapper>
+    <div class="article-header">
+        <div class="article-cover animated fadeIn" style="
+            animation-delay: 600ms;
+            animation-duration: 1.2s;
+            background-image: 
+                radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.65), #100e17),
+                url(/blog/img/cover.jpg);">
+        </div>
+        <div class="else">
+            <p class="animated fadeInDown">
+                
+                <a href="/categories/python"><b>「
+                    </b>PYTHON<b> 」</b></a>
+                
+                二月 09, 2020
+            </p>
+            <h3 class="post-title animated fadeInDown"><a href="/blog/2020/02/09/flask-cli/" title="Flask Cli.py" class="">Flask Cli.py</a>
+            </h3>
+            
+            <p class="post-count animated fadeInDown">
+                
+                <span>
+                    <b class="iconfont icon-text2"></b> <i>文章字数</i>
+                    51k
+                </span>
+                
+                
+                <span>
+                    <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
+                    47 mins.
+                </span>
+                
+                
+                
+                <span id="busuanzi_container_page_pv">
+                    <b class="iconfont icon-read"></b> <i>阅读次数</i>
+                    <span id="busuanzi_value_page_pv">0</span>
+                </span>
+                
+            </p>
+            
+            
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/flask/" rel="tag">flask</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/python/" rel="tag">python</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/source-code/" rel="tag">source code</a></li></ul>
+            
+        </div>
+    </div>
+</div>
+
+<div class="screen-gradient-after">
+    <div class="screen-gradient-content">
+        <div class="screen-gradient-content-inside">
+            <div class="bold-underline-links screen-gradient-sponsor">
+                <p>
+                    <span class="animated fadeIn delay-1s"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article">
+    <div class='main'>
+        <div class="content markdown animated fadeIn">
+            <blockquote>
+<p><strong>从开源项目中学习代码</strong></p>
+</blockquote>
+<h2 id="入口-cli"><a href="#入口-cli" class="headerlink" title="入口- cli"></a>入口- cli</h2><p>当调用flask 命令的时候则会调用cli.py的cli.main<br>cli是一个FlaskGroup类,并且置入一个help text.具体代码如下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">cli = FlaskGroup(</span><br><span class="line">    help=<span class="string">"""\</span></span><br><span class="line"><span class="string">A general utility script for Flask applications.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Provides commands from Flask, extensions, and the application. Loads the</span></span><br><span class="line"><span class="string">application defined in the FLASK_APP environment variable, or from a wsgi.py</span></span><br><span class="line"><span class="string">file. Setting the FLASK_ENV environment variable to 'development' will enable</span></span><br><span class="line"><span class="string">debug mode.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">\b</span></span><br><span class="line"><span class="string">  &#123;prefix&#125;&#123;cmd&#125; FLASK_APP=hello.py</span></span><br><span class="line"><span class="string">  &#123;prefix&#125;&#123;cmd&#125; FLASK_ENV=development</span></span><br><span class="line"><span class="string">  &#123;prefix&#125;flask run</span></span><br><span class="line"><span class="string">"""</span>.format(</span><br><span class="line">        cmd=<span class="string">"export"</span> <span class="keyword">if</span> os.name == <span class="string">"posix"</span> <span class="keyword">else</span> <span class="string">"set"</span>,</span><br><span class="line">        prefix=<span class="string">"$ "</span> <span class="keyword">if</span> os.name == <span class="string">"posix"</span> <span class="keyword">else</span> <span class="string">"&gt; "</span>,</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><strong>os.name</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>posix</td>
+<td>linux</td>
+</tr>
+<tr>
+<td>nt</td>
+<td>windows</td>
+</tr>
+<tr>
+<td>java</td>
+<td>java虚拟机</td>
+</tr>
+</tbody></table>
+<h2 id="cli-main"><a href="#cli-main" class="headerlink" title="cli-main"></a>cli-main</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(self, *args, **kwargs)</span>:</span>    <span class="comment"># 接受所有输入</span></span><br><span class="line">        <span class="comment"># Set a global flag that indicates that we were invoked from the</span></span><br><span class="line">        <span class="comment"># command line interface. This is detected by Flask.run to make the</span></span><br><span class="line">        <span class="comment"># call into a no-op. This is necessary to avoid ugly errors when the</span></span><br><span class="line">        <span class="comment"># script that is loaded here also attempts to start a server.</span></span><br><span class="line">        os.environ[<span class="string">"FLASK_RUN_FROM_CLI"</span>] = <span class="string">"true"</span>   <span class="comment"># 设置一个环境变量，表明由由CLI启动了Flask</span></span><br><span class="line"></span><br><span class="line">        <span class="string">""""""</span></span><br><span class="line">        <span class="keyword">if</span> get_load_dotenv(self.load_dotenv):   <span class="comment"># get_load_dotenv 接受一个bool参数,默认是True,作用是从环境变量中取出FLASK_SKIP_DOTENV，若空则返回传入的参数,若非空返回 FLASK_SKIP_DOTENV in ("0", "false", "no")</span></span><br><span class="line">            load_dotenv()   <span class="comment"># 见下文</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># block-1</span></span><br><span class="line">        obj = kwargs.get(<span class="string">"obj"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> obj <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            obj = ScriptInfo(</span><br><span class="line">                create_app=self.create_app, set_debug_flag=self.set_debug_flag</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">        kwargs[<span class="string">"obj"</span>] = obj</span><br><span class="line">        kwargs.setdefault(<span class="string">"auto_envvar_prefix"</span>, <span class="string">"FLASK"</span>)</span><br><span class="line">        <span class="comment"># block-1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> super(FlaskGroup, self).main(*args, **kwargs)    <span class="comment"># 执行父类的main的剩余动作(Click.Group)</span></span><br></pre></td></tr></table></figure>
+<h2 id="block-1"><a href="#block-1" class="headerlink" title="block-1"></a>block-1</h2><p>构建一个click object用于提示，并且obj有load_app的属性,用来根据FLASK_APP设置的路径加载项目的app.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">obj = kwargs.get(<span class="string">"obj"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> obj <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    obj = ScriptInfo(</span><br><span class="line">        create_app=self.create_app, set_debug_flag=self.set_debug_flag</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">kwargs[<span class="string">"obj"</span>] = obj</span><br><span class="line">kwargs.setdefault(<span class="string">"auto_envvar_prefix"</span>, <span class="string">"FLASK"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="cli-load-dotenv"><a href="#cli-load-dotenv" class="headerlink" title="cli-load_dotenv"></a>cli-load_dotenv</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_dotenv</span><span class="params">(path=None)</span>:</span></span><br><span class="line">    <span class="string">"""Load "dotenv" files in order of precedence to set environment variables.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    If an env var is already set it is not overwritten, so earlier files in the</span></span><br><span class="line"><span class="string">    list are preferred over later files.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Changes the current working directory to the location of the first file</span></span><br><span class="line"><span class="string">    found, with the assumption that it is in the top level project directory</span></span><br><span class="line"><span class="string">    and will be where the Python path should import local packages from.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This is a no-op if `python-dotenv`_ is not installed.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    .. _python-dotenv: https://github.com/theskumar/python-dotenv#readme</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param path: Load the file at this location instead of searching.</span></span><br><span class="line"><span class="string">    :return: ``True`` if a file was loaded.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    .. versionchanged:: 1.1.0</span></span><br><span class="line"><span class="string">        Returns ``False`` when python-dotenv is not installed, or when</span></span><br><span class="line"><span class="string">        the given path isn't a file.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    .. versionadded:: 1.0</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> dotenv <span class="keyword">is</span> <span class="literal">None</span>:  <span class="comment"># 如果没装python-ditebv直接跳过这步</span></span><br><span class="line">        <span class="keyword">if</span> path <span class="keyword">or</span> os.path.isfile(<span class="string">".env"</span>) <span class="keyword">or</span> os.path.isfile(<span class="string">".flaskenv"</span>):</span><br><span class="line">            click.secho(</span><br><span class="line">                <span class="string">" * Tip: There are .env or .flaskenv files present."</span></span><br><span class="line">                <span class="string">' Do "pip install python-dotenv" to use them.'</span>,</span><br><span class="line">                fg=<span class="string">"yellow"</span>,</span><br><span class="line">                err=<span class="literal">True</span>,</span><br><span class="line">            )   <span class="comment"># 输出，因为你有env文件，提示安装python-dotenv来利用。</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># if the given path specifies the actual file then return True,</span></span><br><span class="line">    <span class="comment"># else False</span></span><br><span class="line">    <span class="comment"># 如果传入了path, 判断是否path有效，有效就返回load结果，否则返回False</span></span><br><span class="line">    <span class="keyword">if</span> path <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> os.path.isfile(path):</span><br><span class="line">            <span class="keyword">return</span> dotenv.load_dotenv(path)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    new_dir = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> name <span class="keyword">in</span> (<span class="string">".env"</span>, <span class="string">".flaskenv"</span>):</span><br><span class="line">        <span class="string">"""寻找.env或者.flaskenv文件,找到之后加载并且切换当前目录到该文件的文件夹下"""</span></span><br><span class="line">        path = dotenv.find_dotenv(name, usecwd=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> path:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> new_dir <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            new_dir = os.path.dirname(path)</span><br><span class="line"></span><br><span class="line">        dotenv.load_dotenv(path)   <span class="comment"># 读取env文件</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> new_dir <span class="keyword">and</span> os.getcwd() != new_dir:</span><br><span class="line">        os.chdir(new_dir)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> new_dir <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>  <span class="comment"># at least one file was located and loaded</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="FlaskGroup"><a href="#FlaskGroup" class="headerlink" title="FlaskGroup"></a>FlaskGroup</h2><p>FlaskGroup 继承-&gt; AppGroup 继承-&gt; Click.Group</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlaskGroup</span><span class="params">(AppGroup)</span>:</span></span><br><span class="line">    <span class="string">"""Special subclass of the :class:`AppGroup` group that supports</span></span><br><span class="line"><span class="string">    loading more commands from the configured Flask app.  Normally a</span></span><br><span class="line"><span class="string">    developer does not have to interface with this class but there are</span></span><br><span class="line"><span class="string">    some very advanced use cases for which it makes sense to create an</span></span><br><span class="line"><span class="string">    instance of this.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    For information as of why this is useful see :ref:`custom-scripts`.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    :param add_default_commands: if this is True then the default run and</span></span><br><span class="line"><span class="string">        shell commands will be added.</span></span><br><span class="line"><span class="string">    :param add_version_option: adds the ``--version`` option.</span></span><br><span class="line"><span class="string">    :param create_app: an optional callback that is passed the script info and</span></span><br><span class="line"><span class="string">        returns the loaded app.</span></span><br><span class="line"><span class="string">    :param load_dotenv: Load the nearest :file:`.env` and :file:`.flaskenv`</span></span><br><span class="line"><span class="string">        files to set environment variables. Will also change the working</span></span><br><span class="line"><span class="string">        directory to the directory containing the first file found.</span></span><br><span class="line"><span class="string">    :param set_debug_flag: Set the app's debug flag based on the active</span></span><br><span class="line"><span class="string">        environment</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    .. versionchanged:: 1.0</span></span><br><span class="line"><span class="string">        If installed, python-dotenv will be used to load environment variables</span></span><br><span class="line"><span class="string">        from :file:`.env` and :file:`.flaskenv` files.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        self,</span></span></span><br><span class="line"><span class="function"><span class="params">        add_default_commands=True,</span></span></span><br><span class="line"><span class="function"><span class="params">        create_app=None,</span></span></span><br><span class="line"><span class="function"><span class="params">        add_version_option=True,</span></span></span><br><span class="line"><span class="function"><span class="params">        load_dotenv=True,</span></span></span><br><span class="line"><span class="function"><span class="params">        set_debug_flag=True,</span></span></span><br><span class="line"><span class="function"><span class="params">        **extra</span></span></span><br><span class="line"><span class="function"><span class="params">    )</span>:</span></span><br><span class="line">        params = list(extra.pop(<span class="string">"params"</span>, <span class="literal">None</span>) <span class="keyword">or</span> ())  <span class="comment"># list(extra.pop("params", ()))</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> add_version_option:</span><br><span class="line">            params.append(version_option)</span><br><span class="line"></span><br><span class="line">        AppGroup.__init__(self, params=params, **extra)</span><br><span class="line">        self.create_app = create_app</span><br><span class="line">        self.load_dotenv = load_dotenv</span><br><span class="line">        self.set_debug_flag = set_debug_flag</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> add_default_commands:</span><br><span class="line">            self.add_command(run_command)</span><br><span class="line">            self.add_command(shell_command)</span><br><span class="line">            self.add_command(routes_command)</span><br><span class="line"></span><br><span class="line">        self._loaded_plugin_commands = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_load_plugin_commands</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self._loaded_plugin_commands:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">import</span> pkg_resources</span><br><span class="line">        <span class="keyword">except</span> ImportError:</span><br><span class="line">            self._loaded_plugin_commands = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ep <span class="keyword">in</span> pkg_resources.iter_entry_points(<span class="string">"flask.commands"</span>):</span><br><span class="line">            self.add_command(ep.load(), ep.name)</span><br><span class="line">        self._loaded_plugin_commands = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_command</span><span class="params">(self, ctx, name)</span>:</span></span><br><span class="line">        self._load_plugin_commands()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># We load built-in commands first as these should always be the</span></span><br><span class="line">        <span class="comment"># same no matter what the app does.  If the app does want to</span></span><br><span class="line">        <span class="comment"># override this it needs to make a custom instance of this group</span></span><br><span class="line">        <span class="comment"># and not attach the default commands.</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment"># This also means that the script stays functional in case the</span></span><br><span class="line">        <span class="comment"># application completely fails.</span></span><br><span class="line">        rv = AppGroup.get_command(self, ctx, name)</span><br><span class="line">        <span class="keyword">if</span> rv <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> rv</span><br><span class="line"></span><br><span class="line">        info = ctx.ensure_object(ScriptInfo)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            rv = info.load_app().cli.get_command(ctx, name)</span><br><span class="line">            <span class="keyword">if</span> rv <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                <span class="keyword">return</span> rv</span><br><span class="line">        <span class="keyword">except</span> NoAppException:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">list_commands</span><span class="params">(self, ctx)</span>:</span></span><br><span class="line">        self._load_plugin_commands()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The commands available is the list of both the application (if</span></span><br><span class="line">        <span class="comment"># available) plus the builtin commands.</span></span><br><span class="line">        rv = set(click.Group.list_commands(self, ctx))</span><br><span class="line">        info = ctx.ensure_object(ScriptInfo)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            rv.update(info.load_app().cli.list_commands(ctx))</span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            <span class="comment"># Here we intentionally swallow all exceptions as we don't</span></span><br><span class="line">            <span class="comment"># want the help page to break if the app does not exist.</span></span><br><span class="line">            <span class="comment"># If someone attempts to use the command we try to create</span></span><br><span class="line">            <span class="comment"># the app again and this will give us the error.</span></span><br><span class="line">            <span class="comment"># However, we will not do so silently because that would confuse</span></span><br><span class="line">            <span class="comment"># users.</span></span><br><span class="line">            traceback.print_exc()</span><br><span class="line">        <span class="keyword">return</span> sorted(rv)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        ...</span><br></pre></td></tr></table></figure>
+
+<h2 id="run-command"><a href="#run-command" class="headerlink" title="run_command"></a>run_command</h2><p>注册一个command</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@click.command("run", short_help="Run a development server.")</span></span><br><span class="line"><span class="meta">@click.option("--host", "-h", default="127.0.0.1", help="The interface to bind to.")</span></span><br><span class="line"><span class="meta">@click.option("--port", "-p", default=5000, help="The port to bind to.")</span></span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--cert"</span>, type=CertParamType(), help=<span class="string">"Specify a certificate file to use HTTPS."</span></span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--key"</span>,</span><br><span class="line">    type=click.Path(exists=<span class="literal">True</span>, dir_okay=<span class="literal">False</span>, resolve_path=<span class="literal">True</span>),</span><br><span class="line">    callback=_validate_key,</span><br><span class="line">    expose_value=<span class="literal">False</span>,</span><br><span class="line">    help=<span class="string">"The key file to use when specifying a certificate."</span>,</span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--reload/--no-reload"</span>,</span><br><span class="line">    default=<span class="literal">None</span>,</span><br><span class="line">    help=<span class="string">"Enable or disable the reloader. By default the reloader "</span></span><br><span class="line">    <span class="string">"is active if debug is enabled."</span>,</span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--debugger/--no-debugger"</span>,</span><br><span class="line">    default=<span class="literal">None</span>,</span><br><span class="line">    help=<span class="string">"Enable or disable the debugger. By default the debugger "</span></span><br><span class="line">    <span class="string">"is active if debug is enabled."</span>,</span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--eager-loading/--lazy-loading"</span>,</span><br><span class="line">    default=<span class="literal">None</span>,</span><br><span class="line">    help=<span class="string">"Enable or disable eager loading. By default eager "</span></span><br><span class="line">    <span class="string">"loading is enabled if the reloader is disabled."</span>,</span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--with-threads/--without-threads"</span>,</span><br><span class="line">    default=<span class="literal">True</span>,</span><br><span class="line">    help=<span class="string">"Enable or disable multithreading."</span>,</span><br><span class="line">)</span><br><span class="line"><span class="meta">@click.option(</span></span><br><span class="line">    <span class="string">"--extra-files"</span>,</span><br><span class="line">    default=<span class="literal">None</span>,</span><br><span class="line">    type=SeparatedPathType(),</span><br><span class="line">    help=(</span><br><span class="line">        <span class="string">"Extra files that trigger a reload on change. Multiple paths"</span></span><br><span class="line">        <span class="string">" are separated by '&#123;&#125;'."</span>.format(os.path.pathsep)</span><br><span class="line">    ),</span><br><span class="line">)</span><br><span class="line"><span class="meta">@pass_script_info</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_command</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    info, host, port, reload, debugger, eager_loading, with_threads, cert, extra_files</span></span></span><br><span class="line"><span class="function"><span class="params">)</span>:</span></span><br><span class="line">    <span class="string">"""Run a local development server.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This server is for development purposes only. It does not provide</span></span><br><span class="line"><span class="string">    the stability, security, or performance of production WSGI servers.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    The reloader and debugger are enabled by default if</span></span><br><span class="line"><span class="string">    FLASK_ENV=development or FLASK_DEBUG=1.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    debug = get_debug_flag()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> reload <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        reload = debug</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> debugger <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        debugger = debug</span><br><span class="line"></span><br><span class="line">    show_server_banner(get_env(), debug, info.app_import_path, eager_loading)   <span class="comment"># 打印服务器启动的一些提示.无关紧要</span></span><br><span class="line">    app = DispatchingApp(info.load_app, use_eager_loading=eager_loading)    <span class="comment"># 寻找app</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> werkzeug.serving <span class="keyword">import</span> run_simple</span><br><span class="line"></span><br><span class="line">    run_simple(     <span class="comment"># wsgi服务器,到此就启动了</span></span><br><span class="line">        host,</span><br><span class="line">        port,</span><br><span class="line">        app,    <span class="comment"># wsgi 支持的文件</span></span><br><span class="line">        use_reloader=reload,    <span class="comment"># debug=1 则True</span></span><br><span class="line">        use_debugger=debugger,  <span class="comment"># debug=1 则True</span></span><br><span class="line">        threaded=with_threads,</span><br><span class="line">        ssl_context=cert,</span><br><span class="line">        extra_files=extra_files,</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<h2 id="shell-command"><a href="#shell-command" class="headerlink" title="shell_command"></a>shell_command</h2><p>注册一个command</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@click.command("shell", short_help="Run a shell in the app context.")</span></span><br><span class="line"><span class="meta">@with_appcontext</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_command</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""Run an interactive Python shell in the context of a given</span></span><br><span class="line"><span class="string">    Flask application.  The application will populate the default</span></span><br><span class="line"><span class="string">    namespace of this shell according to it's configuration.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    This is useful for executing small snippets of management code</span></span><br><span class="line"><span class="string">    without having to manually configure the application.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">import</span> code</span><br><span class="line">    <span class="keyword">from</span> .globals <span class="keyword">import</span> _app_ctx_stack</span><br><span class="line"></span><br><span class="line">    app = _app_ctx_stack.top.app</span><br><span class="line">    banner = <span class="string">"Python %s on %s\nApp: %s [%s]\nInstance: %s"</span> % (</span><br><span class="line">        sys.version,</span><br><span class="line">        sys.platform,</span><br><span class="line">        app.import_name,</span><br><span class="line">        app.env,</span><br><span class="line">        app.instance_path,</span><br><span class="line">    )</span><br><span class="line">    ctx = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Support the regular Python interpreter startup script if someone</span></span><br><span class="line">    <span class="comment"># is using it.</span></span><br><span class="line">    startup = os.environ.get(<span class="string">"PYTHONSTARTUP"</span>)</span><br><span class="line">    <span class="keyword">if</span> startup <span class="keyword">and</span> os.path.isfile(startup):</span><br><span class="line">        <span class="keyword">with</span> open(startup, <span class="string">"r"</span>) <span class="keyword">as</span> f:</span><br><span class="line">            eval(compile(f.read(), startup, <span class="string">"exec"</span>), ctx)</span><br><span class="line"></span><br><span class="line">    ctx.update(app.make_shell_context())</span><br><span class="line"></span><br><span class="line">    code.interact(banner=banner, local=ctx)</span><br></pre></td></tr></table></figure>
+
+<h2 id="DispathcingApp"><a href="#DispathcingApp" class="headerlink" title="DispathcingApp"></a>DispathcingApp</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DispatchingApp</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""Special application that dispatches to a Flask application which</span></span><br><span class="line"><span class="string">    is imported by name in a background thread.  If an error happens</span></span><br><span class="line"><span class="string">    it is recorded and shown as part of the WSGI handling which in case</span></span><br><span class="line"><span class="string">    of the Werkzeug debugger means that it shows up in the browser.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, loader, use_eager_loading=None)</span>:</span></span><br><span class="line">        self.loader = loader</span><br><span class="line">        self._app = <span class="literal">None</span></span><br><span class="line">        self._lock = Lock()</span><br><span class="line">        self._bg_loading_exc_info = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> use_eager_loading <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            use_eager_loading = os.environ.get(<span class="string">"WERKZEUG_RUN_MAIN"</span>) != <span class="string">"true"</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> use_eager_loading:</span><br><span class="line">            self._load_unlocked()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self._load_in_background()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_load_in_background</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""多线程加载app"""</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_load_app</span><span class="params">()</span>:</span></span><br><span class="line">            __traceback_hide__ = <span class="literal">True</span>  <span class="comment"># noqa: F841</span></span><br><span class="line">            <span class="keyword">with</span> self._lock:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    self._load_unlocked()</span><br><span class="line">                <span class="keyword">except</span> Exception:</span><br><span class="line">                    self._bg_loading_exc_info = sys.exc_info()</span><br><span class="line"></span><br><span class="line">        t = Thread(target=_load_app, args=())</span><br><span class="line">        t.start()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_flush_bg_loading_exception</span><span class="params">(self)</span>:</span></span><br><span class="line">        __traceback_hide__ = <span class="literal">True</span>  <span class="comment"># noqa: F841</span></span><br><span class="line">        exc_info = self._bg_loading_exc_info</span><br><span class="line">        <span class="keyword">if</span> exc_info <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            self._bg_loading_exc_info = <span class="literal">None</span></span><br><span class="line">            reraise(*exc_info)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_load_unlocked</span><span class="params">(self)</span>:</span></span><br><span class="line">        __traceback_hide__ = <span class="literal">True</span>  <span class="comment"># noqa: F841</span></span><br><span class="line">        self._app = rv = self.loader()</span><br><span class="line">        self._bg_loading_exc_info = <span class="literal">None</span></span><br><span class="line">        <span class="keyword">return</span> rv</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, environ, start_response)</span>:</span>    <span class="comment"># 直接被调用</span></span><br><span class="line">        __traceback_hide__ = <span class="literal">True</span>  <span class="comment"># noqa: F841</span></span><br><span class="line">        <span class="keyword">if</span> self._app <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> self._app(environ, start_response)</span><br><span class="line">        self._flush_bg_loading_exception()  <span class="comment"># 清空_bg_loading_exc_info</span></span><br><span class="line">        <span class="keyword">with</span> self._lock:    <span class="comment"># 争抢app资源</span></span><br><span class="line">            <span class="keyword">if</span> self._app <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                rv = self._app</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                rv = self._load_unlocked()</span><br><span class="line">            <span class="keyword">return</span> rv(environ, start_response)</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls"
+                data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+            <ul id="audio-list" style="display:none">
+                
+                
+                <li title='0' data-url='/blog/statics/chengdu.mp3'></li>
+                
+                    
+            </ul>
+            
+            
+            
+        </div>
+        <div class="sidebar">
+            <div class="box animated fadeInRight">
+                <div class="subbox">
+                    <img src="/blog/img/avatar.png" height=300 width=300></img>
+                    <p>Stephen Ling</p>
+                    <span>Think Twice, Code Once.</span>
+                    <dl>
+                        <dd><a href="https://github.com/lingfromSh" target="_blank"><span
+                                    class=" iconfont icon-github"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-twitter"></span></a></dd>
+                        <dd><a href="" target="_blank"><span
+                                    class=" iconfont icon-stack-overflow"></span></a></dd>
+                    </dl>
+                </div>
+                <ul>
+                    <li><a href="/">10 <p>文章</p></a></li>
+                    <li><a href="/categories">11 <p>分类</p></a></li>
+                    <li><a href="/tags">9 <p>标签</p></a></li>
+                </ul>
+            </div>
+            
+            
+            
+            <div class="box sticky animated fadeInRight faster">
+                <div id="toc" class="subbox">
+                    <h4>目录</h4>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#入口-cli"><span class="toc-number">1.</span> <span class="toc-text">入口- cli</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cli-main"><span class="toc-number">2.</span> <span class="toc-text">cli-main</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#block-1"><span class="toc-number">3.</span> <span class="toc-text">block-1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cli-load-dotenv"><span class="toc-number">4.</span> <span class="toc-text">cli-load_dotenv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FlaskGroup"><span class="toc-number">5.</span> <span class="toc-text">FlaskGroup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#run-command"><span class="toc-number">6.</span> <span class="toc-text">run_command</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell-command"><span class="toc-number">7.</span> <span class="toc-text">shell_command</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DispathcingApp"><span class="toc-number">8.</span> <span class="toc-text">DispathcingApp</span></a></li></ol>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+    <div id="back-to-top" class="animated fadeIn faster">
+        <div class="flow"></div>
+        <span class="percentage animated fadeIn faster">0%</span>
+        <span class="iconfont icon-top02 animated fadeIn faster"></span>
+    </div>
+</body>
+<footer>
+    <p class="copyright" id="copyright">
+        &copy; 2020
+        <span class="gradient-text">
+            Stephen Ling
+        </span>.
+        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+        Theme
+        <span class="gradient-text">
+            <a href="https://github.com/TriDiamond/hexo-theme-obsidian" title="Obsidian" target="_blank" rel="noopener">Obsidian</a>
+        </span>
+        <small><a href="https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md" title="v1.4.3" target="_blank" rel="noopener">v1.4.3</a></small>
+    </p>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      preferredFont: "TeX",
+      availableFonts: ["STIX", "TeX"],
+      linebreaks: {
+        automatic: true
+      },
+      EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+      inlineMath: [
+        ["$", "$"],
+        ["\\(", "\\)"]
+      ],
+      processEscapes: true,
+      ignoreClass: "tex2jax_ignore|dno",
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      noUndefined: {
+        attributes: {
+          mathcolor: "red",
+          mathbackground: "#FFEEEE",
+          mathsize: "90%"
+        }
+      },
+      Macros: {
+        href: "{}"
+      }
+    },
+    messageStyle: "none"
+  });
+</script>
+<script>
+  function initialMathJax() {
+    MathJax.Hub.Queue(function () {
+      var all = MathJax.Hub.getAllJax(),
+        i;
+      // console.log(all);
+      for (i = 0; i < all.length; i += 1) {
+        console.log(all[i].SourceElement().parentNode)
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  }
+
+  function reprocessMathJax() {
+    if (typeof MathJax !== 'undefined') {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }
+  }
+</script>
+
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/blog/js/plugin.js"></script>
+<script src="/blog/js/obsidian.js"></script>
+<script src="/blog/js/jquery.truncate.js"></script>
+<script src="/blog/js/search.js"></script>
+
+
+<script src="//cdn.bootcss.com/typed.js/2.0.10/typed.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+
+<script src="https://cdn.bootcss.com/codemirror/5.48.4/codemirror.min.js"></script>
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/javascript/javascript.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/css/css.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/xml/xml.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/htmlmixed/htmlmixed.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/clike/clike.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/php/php.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/shell/shell.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/python/python.min.js"></script>
+
+
+    
+<script src="//cdn.bootcss.com/codemirror/5.48.4/mode/sql/sql.min.js"></script>
+
+
+
+
+    
+<script src="/blog/js/busuanzi.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if ($('span[id^="busuanzi_"]').length) {
+                initialBusuanzi();
+            }
+        });
+    </script>
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.css">
+<link rel="stylesheet" href="//cdn.bootcss.com/photoswipe/4.1.3/default-skin/default-skin.min.css">
+
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.3/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>
+    function initialTyped () {
+        var typedTextEl = $('.typed-text');
+        if (typedTextEl && typedTextEl.length > 0) {
+            var typed = new Typed('.typed-text', {
+                strings: ["Think Twice, Code Once.", "三思而后行"],
+                typeSpeed: 90,
+                loop: true,
+                loopCount: Infinity,
+                backSpeed: 20,
+            });
+        }
+    }
+
+    if ($('.article-header') && $('.article-header').length) {
+        $(document).ready(function () {
+            initialTyped();
+        });
+    }
+</script>
+
+
+
+
+</html>
