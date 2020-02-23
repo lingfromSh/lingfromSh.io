@@ -5,15 +5,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SQL DISTINCT - Stephen Ling</title>
+    <title>541.reverseStr - Stephen Ling</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Stephen Ling,"> 
     <meta name="description" content="做起来比说起来有力.,
-SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql_select.asp (W3school).
-
-作用对,"> 
+来源：力扣（LeetCode）链接：https://leetcode-cn.com/problems/reverse-string-ii著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注,"> 
     <meta name="author" content="Stephen Ling"> 
     <link rel="alternative" href="atom.xml" title="Stephen Ling" type="application/atom+xml"> 
     <link rel="icon" href="/blog/img/favicon.png"> 
@@ -60,7 +58,7 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
     <div class="navigation animated fadeIn fast delay-1s">
         <img id="home-icon" class="icon-home" src="/img/favicon.png" alt="" data-url="http://stephen-ling.tech/blog">
         <div id="play-icon" title="Play/Pause" class="iconfont icon-play"></div>
-        <h3 class="subtitle">SQL DISTINCT</h3>
+        <h3 class="subtitle">541.reverseStr</h3>
         <div class="social">
             <!--        <div class="like-icon">-->
             <!--            <a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -90,25 +88,25 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
         <div class="else">
             <p class="animated fadeInDown">
                 
-                <a href="/categories/SQL"><b>「
-                    </b>SQL<b> 」</b></a>
+                <a href="/categories/算法"><b>「
+                    </b>算法<b> 」</b></a>
                 
-                二月 07, 2020
+                二月 23, 2020
             </p>
-            <h3 class="post-title animated fadeInDown"><a href="/blog/2020/02/07/sql-distinct/" title="SQL DISTINCT" class="">SQL DISTINCT</a>
+            <h3 class="post-title animated fadeInDown"><a href="/blog/2020/02/23/541-reverseStr/" title="541.reverseStr" class="">541.reverseStr</a>
             </h3>
             
             <p class="post-count animated fadeInDown">
                 
                 <span>
                     <b class="iconfont icon-text2"></b> <i>文章字数</i>
-                    3.6k
+                    8.3k
                 </span>
                 
                 
                 <span>
                     <b class="iconfont icon-timer__s"></b> <i>阅读约需</i>
-                    3 mins.
+                    8 mins.
                 </span>
                 
                 
@@ -121,7 +119,7 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
             </p>
             
             
-            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/Database/" rel="tag">Database</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/SQL/" rel="tag">SQL</a></li></ul>
+            <ul class="animated fadeInDown post-tags-list" itemprop="keywords"><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/Leetcode/" rel="tag">Leetcode</a></li><li class="animated fadeInDown post-tags-list-item"><a class="animated fadeInDown post-tags-list-link" href="/blog/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
             
         </div>
     </div>
@@ -143,125 +141,25 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
     <div class='main'>
         <div class="content markdown animated fadeIn">
             <blockquote>
-<p>SELECT DISTINCT * FROM TABLE<br>以下来源于: <a href="https://www.w3school.com.cn/sql/sql_select.asp" target="_blank" rel="noopener">https://www.w3school.com.cn/sql/sql_select.asp</a> (W3school).</p>
+<p>来源：力扣（LeetCode）<br>链接：<a href="https://leetcode-cn.com/problems/reverse-string-ii" target="_blank" rel="noopener">https://leetcode-cn.com/problems/reverse-string-ii</a><br>著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</p>
 </blockquote>
-<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>对结果去重</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> 列名称 <span class="keyword">FROM</span> 表名称;</span><br></pre></td></tr></table></figure>
+<h2 id="541-反转字符串II"><a href="#541-反转字符串II" class="headerlink" title="541. 反转字符串II"></a>541. 反转字符串II</h2><p>给定一个字符串和一个整数 k，你需要对从字符串开头算起的每个 2k 个字符的前k个字符进行反转。如果剩余少于 k 个字符，则将剩余的所有全部反转。如果有小于 2k 但大于或等于 k 个字符，则反转前 k 个字符，并将剩余的字符保持原样。</p>
+<p>示例:</p>
+<p>输入: s = “abcdefg”, k = 2<br>输出: “bacdfeg”</p>
+<p>要求:</p>
+<pre><code>该字符串只包含小写的英文字母。
+给定字符串的长度和 k 在[1, 10000]范围内。</code></pre><ol>
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> *a, <span class="keyword">char</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> temp;</span><br><span class="line">    <span class="keyword">while</span>(a&lt;b)&#123;</span><br><span class="line">        temp = *a;</span><br><span class="line">        *a = *b;</span><br><span class="line">        *b = temp;</span><br><span class="line">        a++;</span><br><span class="line">        b--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">reverseStr</span><span class="params">(<span class="keyword">char</span> * s, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *p = s;</span><br><span class="line">    <span class="keyword">int</span> iLength;</span><br><span class="line">    <span class="keyword">for</span>(iLength=<span class="number">0</span>;s[iLength]!=<span class="string">'\0'</span>;iLength++);</span><br><span class="line">    <span class="keyword">while</span>(iLength&gt;<span class="number">2</span>*k)&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+k<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 反转前k个</span></span><br><span class="line">        swap(i,j);</span><br><span class="line">        iLength = iLength<span class="number">-2</span>*k;</span><br><span class="line">        p = p+<span class="number">2</span>*k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(iLength&gt;=k)&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+k<span class="number">-1</span>;</span><br><span class="line">        swap(i,j);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+iLength<span class="number">-1</span>;</span><br><span class="line">        swap(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="从role表中查询id-role"><a href="#从role表中查询id-role" class="headerlink" title="从role表中查询id,role"></a>从role表中查询id,role</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure>
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><table>
-<thead>
-<tr>
-<th>id</th>
-<th>role</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>7Dn_McXAQJefscAN7GUU0g</td>
-<td>consumer</td>
-</tr>
-<tr>
-<td>bDHegQTpRQSUSHGgWAad9Q</td>
-<td>superadmin</td>
-</tr>
-<tr>
-<td>0FdCEA01SzOc2hTffN1XIA</td>
-<td>supplier-admin</td>
-</tr>
-<tr>
-<td>hHLgbKpoRda1FeKlO-izpw</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>YXUpJbTWQm60qtRlyg5x9Q</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>SXACqE4YSg6jWTnO2VcFzA</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>### 从role表中查询id,role并且去重</td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">id</span>, <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure></td>
-<td></td>
-</tr>
-<tr>
-<td>### 结果</td>
-<td></td>
-</tr>
-<tr>
-<td>id</td>
-<td>role</td>
-</tr>
-<tr>
-<td>———————-</td>
-<td>————–</td>
-</tr>
-<tr>
-<td>7Dn_McXAQJefscAN7GUU0g</td>
-<td>consumer</td>
-</tr>
-<tr>
-<td>bDHegQTpRQSUSHGgWAad9Q</td>
-<td>superadmin</td>
-</tr>
-<tr>
-<td>0FdCEA01SzOc2hTffN1XIA</td>
-<td>supplier-admin</td>
-</tr>
-<tr>
-<td>hHLgbKpoRda1FeKlO-izpw</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>YXUpJbTWQm60qtRlyg5x9Q</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>SXACqE4YSg6jWTnO2VcFzA</td>
-<td>pro_role</td>
-</tr>
-<tr>
-<td>### 从role表中查询role并且去重</td>
-<td></td>
-</tr>
-<tr>
-<td><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">role</span> <span class="keyword">FROM</span> user_role_roles;</span><br></pre></td></tr></table></figure></td>
-<td></td>
-</tr>
-<tr>
-<td>### 结果</td>
-<td></td>
-</tr>
-<tr>
-<td>role</td>
-<td></td>
-</tr>
-<tr>
-<td>—————</td>
-<td></td>
-</tr>
-<tr>
-<td>supplier-admin</td>
-<td></td>
-</tr>
-<tr>
-<td>superadmin</td>
-<td></td>
-</tr>
-<tr>
-<td>consumer</td>
-<td></td>
-</tr>
-<tr>
-<td>pro_role</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>发现W3school中的内容不够详细，原因从上面的结果也可以看到，我希望可以去重role列，但是我还希望同时列出id。<br>经过baidu,DISTINCT会去重返回结果，所以当需要两列结果时，因为role和id的组合是不重复的，所以没有被去重。</p>
+</li>
+</ol>
+<p>花费8ms.<br>时间复杂度O(n)&lt;=1.5n ;主要是计算长度比较慢</p>
+<ol start="2">
+<li><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> *a, <span class="keyword">char</span> *b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> temp;</span><br><span class="line">    <span class="keyword">while</span>(a&lt;b)&#123;</span><br><span class="line">        temp = *a;</span><br><span class="line">        *a = *b;</span><br><span class="line">        *b = temp;</span><br><span class="line">        a++;</span><br><span class="line">        b--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">char</span> * <span class="title">reverseStr</span><span class="params">(<span class="keyword">char</span> * s, <span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> *p = s;</span><br><span class="line">    <span class="keyword">int</span> iLength=<span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">while</span>(iLength&gt;<span class="number">2</span>*k)&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+k<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 反转前k个</span></span><br><span class="line">        swap(i,j);</span><br><span class="line">        iLength = iLength<span class="number">-2</span>*k;</span><br><span class="line">        p = p+<span class="number">2</span>*k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(iLength&gt;=k)&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+k<span class="number">-1</span>;</span><br><span class="line">        swap(i,j);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">char</span> *i = p;</span><br><span class="line">        <span class="keyword">char</span> *j = p+iLength<span class="number">-1</span>;</span><br><span class="line">        swap(i,j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>花费0ms.<br>时间复杂度O(n);</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls"
@@ -307,7 +205,7 @@ SELECT DISTINCT * FROM TABLE以下来源于: https://www.w3school.com.cn/sql/sql
             <div class="box sticky animated fadeInRight faster">
                 <div id="toc" class="subbox">
                     <h4>目录</h4>
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#作用"><span class="toc-number">1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例"><span class="toc-number">3.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#从role表中查询id-role"><span class="toc-number">3.1.</span> <span class="toc-text">从role表中查询id,role</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">3.2.</span> <span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#541-反转字符串II"><span class="toc-number">1.</span> <span class="toc-text">541. 反转字符串II</span></a></li></ol>
                 </div>
             </div>
             
